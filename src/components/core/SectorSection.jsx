@@ -77,7 +77,7 @@ const SectorSection = () => {
 							legal advisory.
 						</h4>
 					</BumperSection>
-					<HorizontalSection>
+					<HorizontalSection className="sm:block hidden">
 						<HorizontalScroll>
 							<CardsContainer>
 								<SampleCards />

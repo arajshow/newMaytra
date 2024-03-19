@@ -3,7 +3,15 @@ import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import toast from "react-hot-toast";
 import { GrView } from "react-icons/gr";
+import Loading from "../../assets/Images/load.gif";
 import { useNavigate } from "react-router-dom";
+import {
+	Card,
+	CardHeader,
+	CardBody,
+	Typography,
+	Button,
+} from "@material-tailwind/react";
 import fb from "../../firebase";
 const DB = fb.firestore();
 const Blogslist = DB.collection("blogs");
@@ -11,6 +19,15 @@ const Blogslist = DB.collection("blogs");
 const BlogslistView = () => {
 	const [blogs, setBlogs] = useState([]);
 	const navigate = useNavigate();
+
+	const formatPublishedDate = (dateString) => {
+		const date = new Date(dateString);
+		return date.toLocaleDateString("en-IN", {
+			day: "2-digit",
+			month: "short",
+			year: "numeric",
+		});
+	};
 
 	useEffect(() => {
 		const unsubscribe = Blogslist.onSnapshot((querySnapshot) => {
@@ -23,73 +40,51 @@ const BlogslistView = () => {
 		return unsubscribe;
 	}, []);
 
-	const deleteBlog = (id) => {
-		Blogslist.doc(id)
-			.delete()
-			.then(() => {
-				toast.success("post deleted successfully");
-			})
-			.catch((error) => {
-				toast.error("something went wrong, try again");
-			});
-	};
+	console.log("blogs data ", blogs);
 
 	return (
-		<>
-			<div className="container mx-auto">
-				{blogs.map((blog) => (
-					<div
-						key={blog.id}
-						className="bg-[#FCF5E5] shadow-lg rounded-lg overflow-hidden mb-8"
-					>
-						<div className="p-4">
-							<h2 className="text-2xl font-bold text-gray-800 my-3">
-								{blog.Title}
-							</h2>
-							<div
-								dangerouslySetInnerHTML={{
-									__html:
-										blog.Body.split(" ").slice(0, 30).join(" ") +
-										(blog.Body.split(" ").length > 30 ? "..." : ""),
-								}}
+		<div className="items-center mx-auto">
+			{blogs.map((blog) => (
+				<Link to={"/blog/" + blog.id} key={blog.id} className="cursor-pointer ">
+					<Card className="w-full max-w-[48rem] flex-row bg-[#FCF5E5] shadow-lg rounded-lg overflow-hidden mb-8">
+						<CardHeader
+							shadow={false}
+							floated={false}
+							className="m-0 w-2/5 shrink-0 rounded-r-none"
+						>
+							<img
+								src={blog.ImageUrl || Loading}
+								alt="card-image"
+								className="h-full w-full object-contain"
 							/>
-						</div>
-						<div className="flex justify-between items-center text-PGray text-2xl p-4 transition-all duration-200">
-							<div className="flex flex-row items-center">
-								<Link
-									to={"/blog/" + blog.id}
-									className="text-blue-500 hover:text-PBlue mr-4"
-								>
-									<GrView />
-								</Link>
-								{/* <Link
-								to={"/blog/edit/" + blog.id}
-								className="text-blue-500 hover:text-PGreen"
-							>
-								<MdModeEditOutline />
-							</Link> */}
+						</CardHeader>
+						<CardBody>
+							<Typography variant="h4" color="blue-gray" className="mb-2">
+								{blog.Title}
+							</Typography>
+							<Typography color="gray" className="mb-8 font-normal">
+								{blog.Body.split(" ").slice(0, 30).join(" ") +
+									(blog.Body.split(" ").length > 30 ? "..." : "")}
+							</Typography>
+							<div className="flex justify-between items-center text-PGray text-2xl">
+								<div>
+									<Typography
+										variant="body"
+										color="gray"
+										className="mb-2 font-normal"
+									>
+										<div className="text-xl">{blog.Author}</div>
+										<div className="text-lg">
+											{formatPublishedDate(blog.published_on)}
+										</div>
+									</Typography>
+								</div>
 							</div>
-							<button
-								className="text-3xl text-PGray hover:text-Pred transition-all duration-200"
-								onClick={() => {
-									// deleteBlog(blog.id);
-									const token = localStorage.getItem("maytra");
-
-									if (token !== null) {
-										deleteBlog(blog.id);
-									} else {
-										toast.error("sign up and try again");
-										navigate("/login");
-									}
-								}}
-							>
-								<MdDelete />
-							</button>
-						</div>
-					</div>
-				))}
-			</div>
-		</>
+						</CardBody>
+					</Card>
+				</Link>
+			))}
+		</div>
 	);
 };
 

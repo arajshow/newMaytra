@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/Images/logo.png";
 import { Link } from "react-router-dom";
 import { MdModeEditOutline } from "react-icons/md";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import fb from "../../firebase";
 import {
 	FaFacebook,
 	FaDiscord,
@@ -10,8 +13,23 @@ import {
 	FaDribbble,
 } from "react-icons/fa";
 import { IoLogoFacebook } from "react-icons/io5";
+const DB = fb.firestore();
+const Emailslist = DB.collection("emails");
 
 const Footer = () => {
+	const [email, setEmail] = useState("");
+	const navigate = useNavigate();
+
+	const handleSubmit = () => {
+		Emailslist.add({
+			Email: email,
+		})
+			.then(() => toast.success("subscribed successfully"))
+			.catch((error) => {
+				toast.error(error);
+			});
+	};
+
 	return (
 		<footer class="bg-black text-white h-[50%]">
 			<div class="flex flex-col gap-8 mx-auto w-full max-w-screen-xl p-4 py-20 lg:py-8 ">
@@ -59,7 +77,7 @@ const Footer = () => {
 					</div>
 				</div>
 				<div className="h-[3px] bg-PWhite rounded-2xl my-6" />
-				<div class="sm:flex sm:items-center sm:justify-between">
+				<div class="sm:flex sm:items-center sm:justify-between ">
 					<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
 						© 2024{" "}
 						<a href="https://flowbite.com/" class="hover:underline">
@@ -67,7 +85,27 @@ const Footer = () => {
 						</a>
 						. All Rights Reserved.
 					</span>
-					<div class="flex mt-4 gap-2 items-center text-lg sm:justify-center sm:mt-0">
+					<div className="absolute right-0  sm:-translate-y-28 -translate-y-36">
+						<form
+							onSubmit={handleSubmit}
+							className="flex items-center text-white"
+						>
+							<input
+								type="email"
+								placeholder="Enter your email"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+								className="py-2 px-4 rounded-l flex-grow bg-black text-PGray border-b border-PGray"
+							/>
+							<button
+								type="submit"
+								className="py-2 px-4  text-PGray rounded-r hover:text-white transition-all duration-200 focus:outline-none focus:ring focus:border-primary-300"
+							>
+								Subscribe
+							</button>
+						</form>
+					</div>
+					<div className="flex mt-4 gap-2 items-center text-lg sm:justify-center sm:mt-0">
 						<Link
 							to={"/login"}
 							className="text-blue-500 w-4 h-4 mr-4 hover:text-PBlue"

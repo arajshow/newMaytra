@@ -12,24 +12,22 @@ import ReadMoreBtn from "../common/ReadMoreBtn";
 
 const SampleCard = (data) => {
 	return (
-		<div class="relative overflow-hidden max-w-md bg-GreenLight border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 w-[500px] h-[80%] mr-[75px]">
-			<img
-				class="rounded-t-lg object-center h-[47%] "
-				src={data.data.fig}
-				alt=""
-			/>
-			<div class="p-5 items-center">
-				<a href="#">
-					<h5 class="mb-2 text-xl font-bold tracking-tight text-PBlue">
-						{data.data.Sname}
-					</h5>
-				</a>
-				<p class="mb-4 text-md font-medium leading-6 text-black">
+		<div class="relative overflow-hidden flex flex-col justify-between max-w-md bg-Back border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 w-[500px] h-[600px] mr-[75px]  shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]">
+			<div class="flex flex-col gap-4 items-center">
+				<img
+					class="rounded-t-lg object-center h-[47%] w-full "
+					src={data.data.fig}
+					alt=""
+				/>
+				<h5 class="mb-2 text-xl font-bold tracking-tight text-PBlue">
+					{data.data.Sname}
+				</h5>
+				<p class="px-4 text-md font-medium leading-6 text-black">
 					{data.data.text}
 				</p>
-				<div className="w-[50%] items-center">
-					<ReadMoreBtn />
-				</div>
+			</div>
+			<div className="w-[50%] items-center m-6">
+				<ReadMoreBtn />
 			</div>
 		</div>
 	);

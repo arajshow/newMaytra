@@ -20,7 +20,7 @@ const BannerSection = () => {
 				backgroundPosition: "center",
 				backgroundRepeat: "repeat",
 			}}
-			className=" flex flex-col items-center w-full justify-center md:h-[800px] h-[550px] "
+			className=" flex flex-col items-center w-full justify-center md:h-[800px] sm:h-[450px] h-[300px]"
 		>
 			<Swiper
 				slidesPerView={1}
@@ -36,14 +36,16 @@ const BannerSection = () => {
 			>
 				{bannerList.map((banner, i) => (
 					<SwiperSlide key={i}>
-						<div className="flex flex-col items-center w-full gap-12 text-start">
-							<div className="flex flex-col justify-start">
-								<p className="text-black text-[80px] font-bold">MAYTRA</p>
-								<p className="text-white font-semibold text-lg">
+						<div className="flex flex-col items-center w-full gap-12 text-center">
+							<div className="flex flex-col justify-center">
+								<p className="text-black md:text-[80px] sm:text-[60px] text-[50px] font-bold">
+									MAYTRA
+								</p>
+								<p className="text-white font-semibold sm:text-lg text-md">
 									{banner.title}
 								</p>
 							</div>
-							<div className="py-5 px-8 text-xl font-semibold bg-white  text-black hover:text-white hover:bg-black rounded-3xl">
+							<div className="py-5 px-8 text-lg font-semibold bg-white  text-black hover:text-white hover:bg-black rounded-3xl">
 								Read More
 							</div>
 						</div>

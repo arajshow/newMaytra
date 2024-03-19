@@ -11,9 +11,9 @@ const ServiceSection = () => {
 			</p>
 			<div className="flex flex-col md:flex-row flex-wrap justify-center">
 				{serviceList.map((data, id) => (
-					<div class={`w-full md:w-1/2 lg:w-1/3 px-4 mb-8`}>
+					<div class={`w-full md:w-1/2 lg:w-1/3 px-4 mb-8 `}>
 						<div
-							class={` group bg-white shadow-md rounded-lg overflow-hidden hover:scale-95 shadow-PGray ${
+							class={` group bg-white shadow-md rounded-lg overflow-hidden md:h-[250px] hover:scale-95 shadow-PGray ${
 								id % 2 === 0 ? "hover:shadow-PBlue" : "hover:shadow-Pred"
 							} hover:shadow-PBlue hover:text-black  transition-all duration-500`}
 						>

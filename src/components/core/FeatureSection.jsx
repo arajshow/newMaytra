@@ -29,19 +29,19 @@ const FeatureSection = () => {
 			>
 				{featuerList.map((feature, i) => (
 					<SwiperSlide key={i}>
-						<div className="flex flex-col items-center justify-center w-[70%] gap-8 text-center mx-auto">
+						<div className="flex flex-col items-center justify-center h-[400px] md:w-[70%] w-[50%] gap-8 text-center mx-auto">
 							<div className="flex flex-col justify-start">
 								<p
 									className={`${
 										i % 2 == 0 ? "text-black" : "text-PBlue"
-									} text-5xl font-bold`}
+									} md:text-4xl text-3xl font-bold`}
 								>
 									{feature.heading1}
 								</p>
 								<span
 									className={`${
 										i % 2 == 0 ? "text-PBlue" : "text-black"
-									} text-5xl font-bold`}
+									} md:text-4xl text-3xl font-bold`}
 								>
 									{feature.heading2}
 								</span>

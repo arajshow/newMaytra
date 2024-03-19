@@ -18,7 +18,10 @@ const Home = () => {
 			<GallerySection />
 			<FeatureSection />
 			<SectorSection />
-			<Clients />
+			<div className="md:block hidden">
+				<Clients />
+			</div>
+
 			<ContactSection />
 			<Footer />
 		</div>

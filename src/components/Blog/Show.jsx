@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import fb from "../../firebase";
 import useAuthState from "./hooks";
+import Loading from "../../assets/Images/load.gif";
 import Footer from "../common/Footer";
 const DB = fb.firestore();
 const Blogslist = DB.collection("blogs");
@@ -53,6 +54,11 @@ const BlogView = () => {
 					<h2 className="text-4xl font-bold text-gray-800 my-3">
 						{blogs.Title}
 					</h2>
+					<img
+						class="rounded-t-lg object-center h-[50%] w-[50%] object-contain"
+						src={blogs.ImageUrl || Loading}
+						alt=""
+					/>
 					<div
 						className=" leading-8 text-xl text-start w-11/12"
 						dangerouslySetInnerHTML={{

@@ -5,11 +5,11 @@ import ReadMoreBtn from "../common/ReadMoreBtn";
 const AboutSection = () => {
 	return (
 		<div className="flex md:flex-row w-10/12 flex-col justify-center items-center mx-auto mt-32 gap-15">
-			<div className="flex flex-col justify-center items-start md:w-[35%] gap-10 ml-20 ">
-				<p className="text-5xl text-black font-bold">
+			<div className="flex flex-col justify-center md:items-start items-center md:w-[35%] gap-10 md:ml-20 mx-auto mb-6">
+				<p className="text-5xl w-full text-black font-bold">
 					About <span className=" text-PBlue">Us</span>
 				</p>
-				<p className="text-lg font-light font-inter leading-8">
+				<p className="text-lg font-light font-inter leading-8 text-start">
 					At MAYTRA, we work with global businesses, international
 					organizations, research institutions, and governments, facilitating
 					smart innovations and enabling strategic value propositions through
@@ -20,13 +20,16 @@ const AboutSection = () => {
 					ensure our project approach is free of environmental, social, &
 					governance risks, thus fulfilling the Principles of Responsible
 					Investments (PRI) practices. <br /> <br />
-					We facilitate smart innovations and value creation in two broad themes
-					related to Human beings – (1) Clean & healthy consumption in terms of
-					climate-smart agriculture, organic food sufficiency, clean water & air
-					availability, and inclusive healthcare systems, and (2) Sustainable
-					living & development in terms of renewable & clean energy access,
-					energy efficiency, natural resources optimization, sustainable
-					infrastructure, livable eco-cities, and new frontiers.
+					<span className="lg:block hidden">
+						{" "}
+						We facilitate smart innovations and value creation in two broad
+						themes related to Human beings – (1) Clean & healthy consumption in
+						terms of climate-smart agriculture, organic food sufficiency, clean
+						water & air availability, and inclusive healthcare systems, and (2)
+						Sustainable living & development in terms of renewable & clean
+						energy access, energy efficiency, natural resources optimization,
+						sustainable infrastructure, livable eco-cities, and new frontiers.
+					</span>
 				</p>
 				<ReadMoreBtn />
 			</div>

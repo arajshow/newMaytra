@@ -49,33 +49,35 @@ const Navbar = () => {
 	}, [showMenu]);
 
 	return (
-		<div className="flex flex-col  items-center justify-center  gap-2 border-b-2 border-b-PGreen">
+		<div className="flex flex-col justify-center gap-2 border-b-2 border-b-PGreen">
 			{/* image */}
-			<Link to="/" className="pb-8">
+			<div className=" md:pb-8 flex md:gap-2 justify-between items-center md:justify-center">
 				<img
 					src={logo}
 					loading="lazy"
-					className="rounded-xl p-1 m-1 border-2 items-center border-white w-[120px] h-[120px]"
+					className=" items-center border-white md:w-[120px] md:h-[120px] w-[60px] h-[60px]"
 				/>
-			</Link>
-
-			<div
-				className={`absolute flex justify-end top-[150px] md:hidden w-full p-3 text-4xl ${
-					showMenu ? "hidden" : "block"
-				}`}
-			>
-				<FiMenu className="text-black " onClick={toggleMenu} />
+				<p className=" font-myriad md:block hidden font-bold text-3xl">
+					maytra
+				</p>
+				<div
+					className={` flex top-0 justify-end md:hidden w-full p-3 text-4xl ${
+						showMenu ? "hidden" : "block"
+					}`}
+				>
+					<FiMenu className="text-black " onClick={toggleMenu} />
+				</div>
 			</div>
 
 			{/* Nav links */}
-			<nav className="flex justify-between items-center">
+			<nav className="flex justify-between items-center md:justify-center">
 				{/* Menu icon for small screens */}
 
 				{/* Dropdown menu */}
 				{showMenu && (
 					<div
 						ref={menuRef}
-						className={`absolute z-50 translate-y-28 -translate-x-2 right-0 mt-2 w-48 bg-galeryBlack text-white rounded-lg shadow-lg py-2 px-2`}
+						className={`absolute z-50 translate-y-10  right-0 mt-2 w-48 bg-PGreen text-white rounded-lg shadow-lg py-2 px-2`}
 					>
 						<ul>
 							{headerItems.map((data) => (
@@ -84,9 +86,9 @@ const Navbar = () => {
 										<p
 											className={`capitalize text-[24px] ${
 												matchRoute(data?.link)
-													? " text-white font-semibold"
-													: "text-PGray"
-											} hover:scale-95 hover:text-white cursor-pointer transition-all duration-200`}
+													? " text-PBlue font-semibold"
+													: "text-PBlue"
+											} hover:scale-95 hover:text-PGray cursor-pointer transition-all duration-200`}
 										>
 											{data.title}
 										</p>

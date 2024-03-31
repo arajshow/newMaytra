@@ -1,41 +1,40 @@
-import {
-	GiBrain,
-	GiCrystalGrowth,
-	GiMagnifyingGlass,
-	GiHazardSign,
-	GiSandsOfTime,
-  GiFactory
-} from "react-icons/gi";
+import icon1 from "../assets/icon/advisory.png";
+import icon2 from "../assets/icon/analytics-icon.png";
+import icon3 from "../assets/icon/architectural-icon.png";
+import icon4 from "../assets/icon/engineering.png";
 
 export const serviceList = [
   {
     heading: "Advisory Services",
-    icon: <GiBrain />,
-    description: "Strategic climate change management and sustainable finance consulting.",
+    icon: <img
+							src={icon1}
+							className=" w-[55px] h-[40px]"
+						/>,
+    description: "We specialize in technology, finance, policy, & regulatory advisory.",
   },
   {
     heading: "Analytics Services",
-    icon: <GiCrystalGrowth />,
-    description: "Advanced data analytics for climate trends and development forecasting.",
+    icon: <img
+							src={icon2}
+							className=" w-[55px] h-[40px]"
+						/>,
+    description: "We focus on research, analysis, and assessments using advanced data science.",
   },
-  {
-    heading: "Evaluation Services",
-    icon: <GiMagnifyingGlass />,
-    description: "Real-time monitoring and evidence-based evaluation for development outcomes.",
-  },
-  {
-    heading: "VIWIKA Lab",
-    icon: <GiHazardSign />,
-    description: "Technology-driven assessment and accountability solutions for development projects.",
-  },
+
   {
     heading: "Architectural Services",
-    icon: <GiSandsOfTime />,
-    description: "Integrated green architecture and urban design with project and disaster management.",
+    icon: <img
+							src={icon3}
+							className=" w-[55px] h-[40px]"
+						/>,
+    description: "Our architectural practice blends artistry, creativity, and technical expertise.",
   },
   {
     heading: "Engineering Services",
-    icon: <GiFactory />,
-    description: "Integrated design for sustainable infrastructure with detailed engineering.",
+    icon: <img
+							src={icon4}
+							className=" w-[55px] h-[40px]"
+						/>,
+    description: "We focus on problem-solving through rigorous applications of science and mathematics.",
   }
 ];

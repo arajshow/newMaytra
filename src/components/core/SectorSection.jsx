@@ -58,7 +58,7 @@ const SectorSection = () => {
 		<div className="w-screen bg-Pyellow">
 			<div className="w-11/12 flex flex-col gap-12 my-32 items-center mx-auto pt-32">
 				<p className="text-5xl text-black font-bold">
-					Our <span className="text-PBlue">Sector</span>
+					<span className="text-PBlue">Sector</span>
 				</p>
 				<GlobalStyle />
 				<Main>

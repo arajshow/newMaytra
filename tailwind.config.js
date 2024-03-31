@@ -1,11 +1,22 @@
+import plugin from "tailwindcss/plugin"
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      inter: ["Myriad", "Inter", "sans-serif"],
-      "edu-sa": ["Edu SA Beginner", "cursive"],
+      myriad: ['Myriad Pro'],
+      acumin: ["acumin-pro", "sans-serif"],
       mono: ["Roboto Mono", "monospace"],
+      hindi: ["Mukta",]
+    },
+    fontWeight: {
+      'myriad': 700,
+      'acumin': 500,
+    },
+    fontStyle: {
+      'myriad': 'normal',
+      'acumin': 'normal',
     },
     colors: {
       white: "#fff",
@@ -28,7 +39,23 @@ module.exports = {
         maxContent: "1260px",
         maxContentTab: "650px"
       },
+      textShadow: {
+        sm: '0 1px 2px var(--tw-shadow-color)',
+        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+        lg: '0 8px 16px var(--tw-shadow-color)',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    }),
+  ],
 };

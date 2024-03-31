@@ -1,11 +1,11 @@
 import React from "react";
-import ServiceSection from "../components/core/ServiceSection";
 import Footer from "../components/common/Footer";
+import ServicesPage from "../components/core/ServicesPage";
 
 const Services = () => {
 	return (
 		<div>
-			<ServiceSection />
+			<ServicesPage />
 			<Footer />
 		</div>
 	);

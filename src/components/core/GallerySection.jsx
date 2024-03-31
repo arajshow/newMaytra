@@ -11,7 +11,7 @@ const GallerySection = () => {
 		<div className="w-screen bg-Back">
 			<div className="flex flex-col gap-3 w-10/12 justify-center items-center mx-auto ">
 				<p className="text-5xl text-black font-bold mt-16 ">
-					Our <span className=" text-PBlue">Gallery</span>
+					<span className=" text-PBlue">Gallery</span>
 				</p>
 				<p className="text-2xl font-light">
 					We question everything, but never doubt patterns

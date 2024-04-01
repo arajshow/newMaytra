@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import desi from "../../assets/Images/desi.jpg";
+import desi from "../../assets/p5.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles

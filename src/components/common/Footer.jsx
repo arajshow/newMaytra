@@ -28,6 +28,8 @@ const Footer = () => {
 			.catch((error) => {
 				toast.error(error);
 			});
+
+		navigate("/");
 	};
 
 	return (
@@ -37,8 +39,8 @@ const Footer = () => {
 					<div class="mb-6 md:mb-0">
 						<a href="#" class="flex items-center">
 							<img src={logo} class="h-8 me-3" alt=" Logo" />
-							<span class="self-center text-2xl font-semibold whitespace-nowrap text-white">
-								Maytra
+							<span class="self-center text-2xl font-myriad font-semibold whitespace-nowrap text-white">
+								maytra
 							</span>
 						</a>
 					</div>
@@ -53,28 +55,54 @@ const Footer = () => {
 						</div>
 						<div className="flex flex-col w-3/10 items-center">
 							<ul class="text-gray-500 dark:text-gray-400 font-semibold ">
-								<li class="mb-4">Publications</li>
-								<li class="mb-4">News & Media</li>
-								<li class="mb-4">Newsletter</li>
+								<li class="mb-5">Publications</li>
+								<li class="mb-5">News & Media</li>
+								<li class="mb-5">Newsletter</li>
 							</ul>
 						</div>
 						<div className="w-2/10">
 							<ul class="text-gray-500 font-semibold cursor-pointer">
-								<li class="mb-4  hover:font-bold hover:text-PBlue hover:scale-95 transition-all duration-200">
-									<Link to={`/blog`}>Maytra Blog</Link>
+								<li class="mb-2  hover:font-bold hover:text-PBlue hover:scale-95 transition-all duration-200">
+									<Link to={`/`}>Home</Link>
 								</li>
-								<li class="mb-4 cursor-pointer hover:font-bold hover:scale-95 hover:text-PBlue transition-all duration-200">
-									Expo, Awards, & Events
+								<li class="mb-2  hover:font-bold hover:text-PBlue hover:scale-95 transition-all duration-200">
+									<Link to={`/about`}>About</Link>
 								</li>
-								<li class="mb-4 cursor-pointer hover:font-bold hover:scale-95 hover:text-PBlue transition-all duration-200">
-									<Link to={`/blog`}>Careers</Link>
+								<li class="mb-2  hover:font-bold hover:text-PBlue hover:scale-95 transition-all duration-200">
+									<Link to={`/services`}>Services</Link>
 								</li>
-								<li class="mb-4 cursor-pointer hover:font-bold hover:scale-95 hover:text-PBlue transition-all duration-200">
-									<Link to={`/blog`}>Procurement</Link>
+								<li class="mb-2  hover:font-bold hover:text-PBlue hover:scale-95 transition-all duration-200">
+									<Link to={`/gallery`}>Gallery</Link>
+								</li>
+								<li class="mb-2  hover:font-bold hover:text-PBlue hover:scale-95 transition-all duration-200">
+									<Link to={`/blog`}>Blog</Link>
+								</li>
+								<li class="mb-2  hover:font-bold hover:text-PBlue hover:scale-95 transition-all duration-200">
+									<Link to={`/contact`}>Contact</Link>
 								</li>
 							</ul>
 						</div>
 					</div>
+				</div>
+				<div className="w-full">
+					<form
+						onSubmit={handleSubmit}
+						className="flex flex-col items-center text-white w-full gap-3"
+					>
+						<input
+							type="email"
+							placeholder="Subscribe to our Newsletter"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+							className="py-2 px-4 w-full rounded-lg text-center flex-grow bg-black border border-PGray text-white"
+						/>
+						<button
+							type="submit"
+							className="py-2 px-4 text-black bg-white rounded-r hover:bg-black hover:border hover:text-white transition-all duration-200 focus:outline-none focus:ring focus:border-primary-300"
+						>
+							Subscribe
+						</button>
+					</form>
 				</div>
 				<div className="h-[3px] bg-PWhite rounded-2xl my-6" />
 				<div class="sm:flex sm:items-center sm:justify-between ">
@@ -85,26 +113,7 @@ const Footer = () => {
 						</a>
 						. All Rights Reserved.
 					</span>
-					<div className="absolute right-0  sm:-translate-y-28 -translate-y-36">
-						<form
-							onSubmit={handleSubmit}
-							className="flex items-center text-white"
-						>
-							<input
-								type="email"
-								placeholder="Enter your email"
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
-								className="py-2 px-4 rounded-l flex-grow bg-black text-PGray border-b border-PGray"
-							/>
-							<button
-								type="submit"
-								className="py-2 px-4  text-PGray rounded-r hover:text-white transition-all duration-200 focus:outline-none focus:ring focus:border-primary-300"
-							>
-								Subscribe
-							</button>
-						</form>
-					</div>
+
 					<div className="flex mt-4 gap-2 items-center text-lg sm:justify-center sm:mt-0">
 						<Link
 							to={"/login"}

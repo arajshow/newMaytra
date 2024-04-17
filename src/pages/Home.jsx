@@ -10,22 +10,21 @@ import ContactSection from "../components/core/ContactSection";
 import Footer from "../components/common/Footer";
 
 const Home = () => {
-	return (
-		<div>
-			<BannerSection />
-			<AboutSection />
-			<ServiceSection />
-			<GallerySection />
-			<FeatureSection />
-			<SectorSection />
-			<div className="md:block hidden">
-				<Clients />
-			</div>
+  return (
+    <div>
+      <BannerSection />
+      <AboutSection />
+      <ServiceSection />
+      <GallerySection />
+      <FeatureSection />
+      <SectorSection />
+      <div className="md:block hidden">
+        <Clients />
+      </div>
 
-			<ContactSection />
-			<Footer />
-		</div>
-	);
+      <Footer />
+    </div>
+  );
 };
 
 export default Home;

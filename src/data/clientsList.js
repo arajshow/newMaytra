@@ -14,7 +14,7 @@ import client13 from "../assets/clients/client13.png";
 import client14 from "../assets/clients/client14.png";
 import client15 from "../assets/clients/client15.png";
 import client16 from "../assets/clients/client16.png";
-import client17 from "../assets/clients/client17.png";
+import client17 from "../assets/clients/client17.jpg";
 import client18 from "../assets/clients/client18.png";
 import client19 from "../assets/clients/client19.png";
 

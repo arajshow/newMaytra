@@ -1,8 +1,8 @@
 import React from "react";
-import icon1 from "../../assets/banner/b1.jpg";
-import icon2 from "../../assets/banner/b2.jpg";
-import icon3 from "../../assets/banner/b3.jpg";
-import icon4 from "../../assets/banner/b4.jpg";
+import icon1 from "../../assets/banner/sec1.jpeg";
+import icon2 from "../../assets/banner/sec2.jpeg";
+import icon3 from "../../assets/banner/sec3.jpeg";
+import icon4 from "../../assets/banner/sec4.jpeg";
 
 // Service components
 const ServiceCard = ({ id, title, imageUrl, subtitle, previewText, tags }) => {

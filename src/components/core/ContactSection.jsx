@@ -3,11 +3,11 @@ import contact from "../../assets/Images/conatct.jpg";
 
 function ContactSection() {
 	return (
-		<div className="flex flex-col justify-center">
-			<p className="text-5xl text-black font-bold mt-16 ">
-				<span className=" text-PGreen"> Contact</span>
+		<div className="flex flex-col justify-center gap-8">
+			<p className="text-5xl text-center text-black w-full font-bold mt-16">
+				<span className=" text-PGreen "> Contact</span>
 			</p>
-			<p className="text-2xl font-light">
+			<p className="text-2xl font-light text-center">
 				Please share your contact information, and we will reach out to you to
 				discuss our interesting work and ideas.
 			</p>
@@ -18,7 +18,7 @@ function ContactSection() {
 					backgroundPosition: "center",
 					backgroundRepeat: "repeat",
 				}}
-				className=" flex flex-col items-center w-full justify-center md:h-[600px] h-[100vh] mt-40"
+				className=" flex flex-col items-center w-full justify-center md:h-[600px] h-[100vh] "
 			>
 				<div className="w-10/12 flex flex-col gap-6 my-16">
 					<div className="row">

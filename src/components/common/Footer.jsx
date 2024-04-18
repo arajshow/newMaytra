@@ -60,7 +60,15 @@ const Footer = () => {
 								<li class="mb-5">Newsletter</li>
 							</ul>
 						</div>
-						<div className="w-2/10">
+						<div className="flex flex-col w-3/10 items-center">
+							<ul class="text-gray-500 dark:text-gray-400 text-center font-semibold ">
+								<li class="mb-5 text-xl">Network </li>
+								<li class="mb-5">PACKGREENS Interactives</li>
+								<li class="mb-5">KSRAUM Digital Studio </li>
+								<li class="mb-5">VIWIKA Cleantech Institute </li>
+							</ul>
+						</div>
+						{/* <div className="w-2/10">
 							<ul class="text-gray-500 font-semibold cursor-pointer">
 								<li class="mb-2  hover:font-bold hover:text-PBlue hover:scale-95 transition-all duration-200">
 									<Link to={`/`}>Home</Link>
@@ -81,27 +89,24 @@ const Footer = () => {
 									<Link to={`/contact`}>Contact</Link>
 								</li>
 							</ul>
-						</div>
+						</div> */}
 					</div>
 				</div>
 				<div className="w-full">
-					<form
-						onSubmit={handleSubmit}
-						className="flex flex-col items-center text-white w-full gap-3"
-					>
-						<input
-							type="email"
-							placeholder="Subscribe to our Newsletter"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-							className="py-2 px-4 w-full rounded-lg text-center flex-grow bg-black border border-PGray text-white"
-						/>
-						<button
-							type="submit"
-							className="py-2 px-4 text-black bg-white rounded-r hover:bg-black hover:border hover:text-white transition-all duration-200 focus:outline-none focus:ring focus:border-primary-300"
-						>
-							Subscribe
-						</button>
+					<form onSubmit={handleSubmit} className="w-full">
+						<div className="flex items-center border rounded-lg border-PGray p-2">
+							<input
+								className="appearance-none bg-transparent text-center border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+								type="email"
+								placeholder="Subscribe to our newslatter"
+							/>
+							<button
+								className="flex-shrink-0 p-2 px-4 bg-white text-black hover:text-white hover:bg-black rounded-lg transition-all duration-200"
+								type="button"
+							>
+								Subscribe
+							</button>
+						</div>
 					</form>
 				</div>
 				<div className="h-[3px] bg-PWhite rounded-2xl my-6" />
